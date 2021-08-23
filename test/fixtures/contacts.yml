@@ -1,0 +1,26 @@
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  user: one
+  company: MyString
+  job_title: MyString
+  birthdate: 2021-08-22
+  chat: MyString
+  website: MyString
+  notes: MyText
+  group_id: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  user: two
+  company: MyString
+  job_title: MyString
+  birthdate: 2021-08-22
+  chat: MyString
+  website: MyString
+  notes: MyText
+  group_id: 1
+

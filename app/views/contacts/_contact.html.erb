@@ -1,0 +1,17 @@
+
+<div class="card contact-card boxshadow" style="width: 18rem; margin: 3pt;">
+  <div class="card-body">
+    <%= link_to(contact) do  %>
+        <h5 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>
+        <%= contact.full_name %></h5>
+    <% end %>
+    <h6 class="card-subtitle mb-2 text-muted"><%= mail_to contact.email %>
+    </h6>
+    <p class="card-text">
+        <% contact.phones.each do |p| %>
+          <%= phone_to p.number %> <br />
+         <% end %>
+    </p>
+ 
+  </div>
+</div>

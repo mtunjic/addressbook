@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>
+      <%= contact.full_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= contact.email %></h6>
+    <p class="card-text"> <%= contact.notes %></p>
+    <%= link_to 'Edit', edit_contact_path(contact) %>
+    <%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

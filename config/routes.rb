@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
-  #devise_for :users
-  root to: "home#index"
+  resources :contacts
+  devise_for :users
+  root to: "contacts#index"
+
+  get '/contacts/search/:query', to: 'contacts#search', as: 'search'
 end
