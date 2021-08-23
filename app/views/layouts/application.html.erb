@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Address Book</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    
+    <div class="container">
+      <!-- left menu side -->
+      <div class="row">
+      
+        <!-- main content -->
+        <div class="col-10">
+           <main role="main" class="pb-3">
+
+            <% if notice.present? %>
+              <aside class="alert alert-info">
+                <%= notice %>
+              </aside>
+            <% end %>
+            <% if alert.present? %>
+              <aside class="alert alert-danger">
+                <%= alert %>
+              </aside>
+            <% end %>
+            <%= yield %>
+            </main>
+        </div>
+
+        <!-- right actions side -->
+        <div class="col">
+           <div class="sidebar">
+            <%= yield :sidebar %>
+            <div class="actions">
+                <%= yield :actions %>
+            </div>
+          
+          </div>
+        </div>
+         <!-- end action side -->
+
+      </div> 
+    </div>
+
+    <%= render 'layouts/footer' %>
+
+  </body>
+</html>

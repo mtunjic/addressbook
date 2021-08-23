@@ -1,0 +1,250 @@
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0077cc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+// .footer {
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     white-space: nowrap;
+//     line-height: 60px;
+// }
+
+// main.container {
+//     width: auto;
+//     max-width: 680px;
+//     padding: 0 15px;
+//     padding-bottom: 60px;
+//   }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.media p {
+    font-size: 16px;
+}
+
+a:hover {
+    background: #f5f5f5;
+}
+
+// .navbar {
+// 	background: #f8f8f8;
+// 	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+// 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+// 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+// }
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: xx-large;
+    color: #5c67a5;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+.contact-card a:link {
+    color: #36373d;
+}
+
+.contact-card a:visited {
+    color: #36373d;
+}
+
+.contact-card a:hover {
+    color: #36373d;
+}
+
+.contact-card a:active {
+    color: #36373d;
+}
+
+.btn-label {
+    position: relative;
+    left: -12px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px 0 0 3px;
+}
+.btn-labeled {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.btn {
+    margin-bottom: 10px;
+}
+
+.action-header {
+    position: relative;
+    padding-bottom: 0px;
+    &:first-child {
+        margin-top: 20px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        max-width: 55%;
+    }
+}
+ul.actions {
+    @extend .list-unstyled !optional;
+    @extend .list-inline !optional;
+    position: relative;
+    bottom: -2px;
+    right: 2px;
+    max-width: 45%;
+    text-align: right;
+}
+
+
+.session-links {
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    max-width: 45%;
+    text-align: right;
+}
+
+.user_photo {
+    float: left;
+    display: block;
+    width: 50px; height: 50px;
+    margin: 0 10px 10px 0;
+    z-index: 1;
+  }
+  
+  .user_photo.medium {
+    width: 100px; height: 100px;
+    background: #fff url(loader.gif) no-repeat center center;
+  }
+  
+  .user_photo.large {
+    width: 150px; height: 150px;
+    margin: 0 15px 15px 0;
+    background: #fff url(loader.gif) no-repeat center center;
+  }
+  
+  a.back_link {
+    position: absolute;
+    top: 20px; right: 20px;
+    line-height: 22px;
+    text-decoration: none;
+  }
+
+  .time {
+    color: rgba(51, 51, 51, 0.5);
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Styles for basic elements */
+
+.soft { color: #666; }
+
+.quiet { color: #999; }
+
+.center { text-align: center; }
+
+.gravatar { margin: 0; padding: 0; }
+
+/* if browser supports box-shadow */
+.boxshadow{
+    border: none;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  
+/* Styles for blank slate */
+
+.blank_slate {
+    padding: 40px 0;
+    border: 2px dashed #ddd;
+    text-align: center;
+    font-size: 1.7em;
+    color: #999;
+  }
+  
+  .blank_slate.last {
+    margin-top: 20px;
+  }
+  
