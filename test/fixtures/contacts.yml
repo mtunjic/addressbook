@@ -1,5 +1,3 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   first_name: MyString
   last_name: MyString
@@ -7,7 +5,7 @@ one:
   user: one
   company: MyString
   job_title: MyString
-  birthdate: 2021-08-23
+  birthdate: 2021-08-22
   chat: MyString
   website: MyString
   notes: MyText
@@ -20,8 +18,9 @@ two:
   user: two
   company: MyString
   job_title: MyString
-  birthdate: 2021-08-23
+  birthdate: 2021-08-22
   chat: MyString
   website: MyString
   notes: MyText
   group_id: 1
+
