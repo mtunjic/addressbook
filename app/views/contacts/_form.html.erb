@@ -1,0 +1,84 @@
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">  
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control" %>
+  <div class="form-group">
+    <%= form.label :company %>
+    <%= form.text_field :company, class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= form.label :job_title %>
+    <%= form.text_field :job_title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :birthdate %>
+    <%= form.date_select :birthdate, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :chat %>
+    <%= form.text_field :chat, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :website %>
+    <%= form.text_field :website, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :group %>
+    <%= form.select :group_id, Group.all.collect { |p| [ p.name, p.id ] } %>
+  </div>
+  <div class="form-group">
+    <%= form.fields_for :addresses do |ff| %>
+    <div>
+      <%= ff.label :city %>
+      <%= ff.text_field :city, class: "form-control" %>
+      
+      <%= ff.label :street %>
+      <%= ff.text_field :street, class: "form-control" %>
+
+      <%= ff.label :state %>
+      <%= ff.text_field :state , class: "form-control" %>
+
+      <%= ff.label :zip_code %>
+      <%= ff.text_field :zip_code, class: "form-control" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= form.label :phone %>
+    <%= form.fields_for :phones do |ff| %>
+    <div class="form-group">
+      <%= ff.text_field :number, class: "form-control" %>
+    </div>
+  </div>
+ <% end %>
+
+  <hr />
+  <div class="form-group">
+  <%= form.label :notes %>
+    <%= form.text_area :notes, class: "form-control", rows: 10 %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+</div>
+<% end %>

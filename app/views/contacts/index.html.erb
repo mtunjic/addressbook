@@ -1,0 +1,32 @@
+<% contacts_count = current_user.contacts.count %>
+<h3>&nbsp;</h3>
+<h3><i class="fa fa-user" aria-hidden="true"></i> Contacts (<%= contacts_count %>)</h3>
+<h1>&nbsp;</h1>
+<h5 class="center">
+
+<% if contacts_count > 0 %>
+  <div class="btn-group">
+    <% ('A'..'Z').each do |letter| %>
+      <%= link_to_unless_current letter, contacts_path(letter: letter), class: 'btn' %>
+    <% end %>
+    <%= link_to 'All', contacts_path, class: 'btn' %>
+  </div></h5>
+  <hr/>
+
+ <div class="d-flex align-content-start flex-wrap">  
+  <%= render @contacts %>
+ </div>
+
+ <% content_for :actions do %>
+  <div class="action-header">
+    <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %>
+ 
+  </div>
+<% end %>
+
+<% else %>
+  <%= render "layouts/blank_slate" %>
+<% end %>
+<br>
+
+

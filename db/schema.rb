@@ -42,10 +42,8 @@ ActiveRecord::Schema.define(version: 2021_08_23_122441) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.integer "contact_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["contact_id"], name: "index_groups_on_contact_id"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -65,12 +63,12 @@ ActiveRecord::Schema.define(version: 2021_08_23_122441) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "contacts"
   add_foreign_key "contacts", "users"
-  add_foreign_key "groups", "contacts"
   add_foreign_key "phones", "contacts"
 end
