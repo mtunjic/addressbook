@@ -19,4 +19,10 @@ class Contact < ApplicationRecord
   def self.by_letter(letter)
     where("last_name LIKE ?", "#{letter}%").order(:last_name)
   end
+
+  after_initialize do 
+    addresses.build
+    phones.build 
+  end
+  
 end
