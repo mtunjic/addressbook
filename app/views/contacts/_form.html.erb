@@ -29,10 +29,12 @@
     <%= form.label :job_title %>
     <%= form.text_field :job_title, class: "form-control" %>
   </div>
+  <br />
   <div class="form-group">
     <%= form.label :birthdate %>
-    <%= form.date_select :birthdate, class: "form-control" %>
+    <%= form.date_select :birthdate, class: "form-select" %>
   </div>
+  <br />
   <div class="form-group">
     <%= form.label :chat %>
     <%= form.text_field :chat, class: "form-control" %>
@@ -41,10 +43,18 @@
     <%= form.label :website %>
     <%= form.text_field :website, class: "form-control" %>
   </div>
+   <br />
   <div class="form-group">
+    <p>
     <%= form.label :group %>
-    <%= form.select :group_id, Group.all.collect { |p| [ p.name, p.id ] } %>
+    <%= form.select :group_id, Group.all.collect { |p| [ p.name, p.id ] }, class: "form-select" %>
+    
   </div>
+   <br />
+  <div class="form-group">
+    <%= form.label :avatar_image %>
+    <%= form.file_field :avatar_image %>
+ </div>
  <hr />
   <!-- Address form -->
   <div class="form-group"  data-controller="nested-form">
@@ -87,6 +97,7 @@
   <%= form.label :notes %>
     <%= form.text_area :notes, class: "form-control", rows: 10 %>
   </div>
+  <br />
   <div class="actions">
     <%= form.submit %>
   </div>

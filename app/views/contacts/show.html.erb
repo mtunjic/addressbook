@@ -6,7 +6,8 @@
   <%= mail_to @contact.email %>
 </p>
 <p>
-
+  <%= image_tag(@contact.avatar_image) %>
+</p>
 <p>
   <strong>Phone Numbers:</strong><br/>
  <% @contact.phones.each do |p| %>

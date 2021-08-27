@@ -4,7 +4,11 @@ class Contact < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :phones, dependent: :destroy
 
-	validates :first_name, :email, presence: true
+  has_one_attached :avatar_image
+  # validations
+  validates :first_name, :email, presence: true
+
+  # nested attrs
   accepts_nested_attributes_for :addresses, 
                   allow_destroy: true, 
                   reject_if: proc { |attr| attr['street'].blank? } 
