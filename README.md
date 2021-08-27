@@ -48,7 +48,7 @@ $ open erd.pdf
 - [x] UI for contact
 - [ ] Improve security, auth per actions
 - [x] Add StimulsJS for nested input fields 
-- [ ] Upload user picture
+- [x] Upload user picture
 - [ ] Format the phone number for display
 - [ ] Import/Export CSV 
 - [ ] Add index navigation pane 
