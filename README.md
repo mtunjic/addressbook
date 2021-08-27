@@ -42,12 +42,12 @@ $ open erd.pdf
 
 ### TODO
 - [x] Basic layout and Bootsrap 5 css
-- [ ] Domain model and db
+- [x] Domain model and db
 - [x] Devise for authentication
 - [x] Bootstrap support for devise views
-- [ ] UI for contact
+- [x] UI for contact
 - [ ] Improve security, auth per actions
-- [ ] Add StimulsJS for nested input fields 
+- [x] Add StimulsJS for nested input fields 
 - [ ] Upload user picture
 - [ ] Format the phone number for display
 - [ ] Import/Export CSV 

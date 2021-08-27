@@ -11,10 +11,21 @@ import "channels"
 // bootstrap
 import "bootstrap"
 //import "../stylesheets/application"
-import "@bootstrap-icons/font/bootstrap-icons.css"
+//import "@bootstrap-icons/font/bootstrap-icons.css"
 import "@fortawesome/fontawesome-free/css/all"
 
 
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+
+// StimulsJS
+const application = Application.start()
+const context = require.context("../controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))
+
+
+// Rails & Turbo
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
