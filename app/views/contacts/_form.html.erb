@@ -45,32 +45,30 @@
     <%= form.label :group %>
     <%= form.select :group_id, Group.all.collect { |p| [ p.name, p.id ] } %>
   </div>
-
+ <hr />
   <!-- Address form -->
-  <div class="form-group">
-    <%= form.fields_for :addresses do |ff| %>
-    <div>
-      <%= ff.label :city %>
-      <%= ff.text_field :city, class: "form-control" %>
-      
-      <%= ff.label :street %>
-      <%= ff.text_field :street, class: "form-control" %>
+  <div class="form-group"  data-controller="nested-form">
+    <!-- Template address form -->
+    <template data-target='nested-form.template'>
+      <%= form.fields_for :addresses, Address.new, child_index: 'item_template' do |address| %>
+        <%= render 'address_fields', form: address %>
+      <% end %>
+    </template>
+   
 
-      <%= ff.label :state %>
-      <%= ff.text_field :state , class: "form-control" %>
-
-      <%= ff.label :zip_code %>
-      <%= ff.text_field :zip_code, class: "form-control" %>
-    </div>
+    <%= form.fields_for :addresses do |address| %>
+      <%= render 'address_fields', form: address %>
     <% end %>
     <div data-target="nested-form.add_item">
       <%= link_to "+ Add Address", "#", data: { action: "nested-form#add_association" } %>
     </div>
   </div>
   
+  <hr />
   <!-- Phone form -->
   <div class="form-group" data-controller="nested-form">
     <%= form.label :phone %>
+     <!-- Template phone form -->
     <template data-target='nested-form.template'>
       <%= form.fields_for :phones, Phone.new,  child_index: 'item_template'  do |phone| %>
         <%= render 'phone_fields', form: phone %>
