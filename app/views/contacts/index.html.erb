@@ -13,22 +13,29 @@
   </div></h5>
   <hr/>
 
- <div class="d-flex align-content-start flex-wrap">  
-  <%= render @contacts %>
- </div>
- 
- <%= paginate @contacts %>
- 
- <% content_for :actions do %>
-  <div class="action-header">
-    <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %>
- 
+  <div class="d-flex align-content-start flex-wrap">  
+    <%= render @contacts %>
   </div>
-<% end %>
+ 
+  <%= paginate @contacts %>
 
-<% else %>
-  <%= render "layouts/blank_slate" %>
-<% end %>
+  <hr />
+  <h4>Import Contacts</h4>
+
+  <%= form_tag import_contacts_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
+  
+  <% content_for :actions do %>
+    <div class="action-header">
+      <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %> 
+    </div>
+  <% end %>
+
+  <% else %>
+    <%= render "layouts/blank_slate" %>
+  <% end %>
 <br>
 
 
