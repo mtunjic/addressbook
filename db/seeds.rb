@@ -11,7 +11,7 @@ group_ids = Group.create([
 ]).pluck(:id)
 
 
-15.times do |i|
+88.times do |i|
 	contact = user.contacts.create!({
 		first_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name,
