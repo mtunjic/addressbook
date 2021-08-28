@@ -49,7 +49,7 @@ $ open erd.pdf
 - [ ] Improve security, auth per actions
 - [x] Add StimulsJS for nested input fields 
 - [x] Upload user picture
-- [ ] Format the phone number for display
+- [x] Format the phone number for display
 - [ ] Import/Export CSV 
 - [ ] Add index navigation pane 
 - [ ] Contact search
