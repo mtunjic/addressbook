@@ -10,8 +10,10 @@ class ContactsController < ApplicationController
       @contacts = current_user
         .contacts.includes(:phones)
         .by_letter(params[:letter])
+        .page(params[:page]).per(9)
     else
       @contacts = current_user.contacts.includes(:phones)
+                              .page(params[:page]).per(9)
     end
   end
 

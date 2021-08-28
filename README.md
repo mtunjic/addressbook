@@ -53,7 +53,7 @@ $ open erd.pdf
 - [ ] Import/Export CSV 
 - [ ] Add index navigation pane 
 - [ ] Contact search
-- [ ] Pagination
+- [x] Pagination
 - [ ] More input validations and better error messages 
 - [ ] Clean and refactor html
 - [ ] Deploy scripts & docker
