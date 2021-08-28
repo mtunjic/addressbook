@@ -6,12 +6,12 @@
   <%= mail_to @contact.email %>
 </p>
 <p>
-  <%= image_tag(@contact.avatar_image) %>
+  <%= image_tag(@contact.avatar_image) if @contact.avatar_image.present? %>
 </p>
 <p>
   <strong>Phone Numbers:</strong><br/>
  <% @contact.phones.each do |p| %>
-    <%= phone_to p.number %> <br />
+    <%= phone_to p.formatted_phone %> <br />
   <% end %>
 </p>
 <hr>

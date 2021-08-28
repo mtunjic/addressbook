@@ -9,7 +9,7 @@
     </h6>
     <p class="card-text">
         <% contact.phones.each do |p| %>
-          <%= phone_to p.number %> <br />
+          <%= phone_to p.formatted_phone %> <br />
          <% end %>
     </p>
  
