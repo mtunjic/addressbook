@@ -61,6 +61,14 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
+  def import
+    Contact.import_csv(params[:file])
+    redirect_to root_url, notice: "Contacts imported."
+  rescue
+    flash[:alert] = "Unable to import contacts."
+    redirect_to contacts_path
+  end
+
   private
     def set_contact
       @contact = current_user.contacts.find(params[:id])
@@ -71,7 +79,7 @@ class ContactsController < ApplicationController
 
  
     def contact_params
-      params.require(:contact).permit(:first_name, :last_name, :email, :company, 
+      params.require(:contact).permit(:first_name, :last_name, :email, :company,
             :job_title, :birthdate, :chat, :website, :notes, :group_id, :avatar_image,
             phones_attributes: [:_destroy, :id, :number, :type],
             addresses_attributes: [:_destroy, :id, :zip_code, :street, :city, :state])

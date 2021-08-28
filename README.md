@@ -46,14 +46,14 @@ $ open erd.pdf
 - [x] Devise for authentication
 - [x] Bootstrap support for devise views
 - [x] UI for contact
-- [ ] Improve security, auth per actions
 - [x] Add StimulsJS for nested input fields 
 - [x] Upload user picture
 - [x] Format the phone number for display
-- [ ] Import/Export CSV 
+- [x] Import/Export CSV 
 - [ ] Add index navigation pane 
 - [ ] Contact search
 - [x] Pagination
 - [ ] More input validations and better error messages 
+- [ ] Improve security, auth per actions
 - [ ] Clean and refactor html
 - [ ] Deploy scripts & docker
