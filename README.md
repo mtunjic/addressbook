@@ -51,7 +51,7 @@ $ open erd.pdf
 - [x] Format the phone number for display
 - [x] Import/Export CSV 
 - [ ] Add index navigation pane 
-- [ ] Contact search
+- [x] Contact search
 - [x] Pagination
 - [ ] More input validations and better error messages 
 - [ ] Improve security, auth per actions

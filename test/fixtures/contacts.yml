@@ -9,7 +9,7 @@ one:
   chat: MyString
   website: MyString
   notes: MyText
-  group_id: 1
+  group: one
 
 two:
   first_name: MyString
@@ -22,5 +22,5 @@ two:
   chat: MyString
   website: MyString
   notes: MyText
-  group_id: 1
+  group: two 
 
