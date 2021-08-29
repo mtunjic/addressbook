@@ -1,0 +1,12 @@
+<div class="search input-group mb-3">
+  <%= form_tag({}, {:method => :get}) do %>
+    <%= text_field_tag :letter, params[:letter] ,
+                          placeholder: "Search Contact...", 
+                          size: 24,
+                          class: "form-control form-control-sm" %>
+    <%# <button type="submit" class="btn btn-outline-secondary btn-sm searchButton">
+      <i class="fas fa-search"></i>
+    </button> %>
+  <% end %>
+</div>
+
