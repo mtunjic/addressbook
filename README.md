@@ -1,4 +1,4 @@
-# Address Book v0.0.1
+# Address Book v0.2.1
 
 ### [Live demo](https://addressbookdemo.herokuapp.com) 
 
@@ -38,6 +38,13 @@ $ heroku run rake db:seed
 $ heroku open
 ```
 
+#### Docker (Optional)
+```sh 
+$ docker build .
+$ docker tag [IMAGE_ID] addressbook
+$ docker run -p 3000:3000 addressbook
+```
+
 ##### Genarate Domain Model and ER PDF (Optional)
 ```sh 
 $ bundle exec erd
@@ -60,4 +67,4 @@ $ open erd.pdf
 - [ ] More input validations and better error messages 
 - [ ] Improve security, auth per actions
 - [ ] Clean and refactor html
-- [ ] Deploy scripts & docker
+- [x] Deploy scripts & docker
