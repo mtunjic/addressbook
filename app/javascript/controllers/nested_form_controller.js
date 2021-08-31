@@ -15,4 +15,11 @@ export default class extends Controller {
     item.querySelector("input[name*='_destroy']").value = 1
     item.style.display = 'none'
   }
+
+  remove_form(event) {
+    event.preventDefault()
+    let item = event.target.closest(".nested-address")
+    item.querySelector("input[name*='_destroy']").value = 1
+    item.style.display = 'none'
+  }
 }

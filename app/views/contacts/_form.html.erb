@@ -1,3 +1,4 @@
+<div class="w-70">
 <%= form_with(model: contact) do |form| %>
   <% if contact.errors.any? %>
     <div id="error_explanation">
@@ -31,9 +32,32 @@
   </div>
   <br />
   <div class="form-group">
-    <%= form.label :birthdate %>
-    <%= form.date_select :birthdate, class: "form-select" %>
+    <%= form.label :birthdate %><br />
+    <%#= form.date_select :birthdate, class: "form-select" %>
   </div>
+  
+  <div class="w-50 row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= form.label :day %>
+          <input type="text" name="contact[birthdate(3i)]" id="contact_birthdate_3i" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <%= form.label :month %>
+          <input type="text" name="contact[birthdate(2i)]" id="contact_birthdate_2i" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :year %>
+          <input type="text" name="contact[birthdate(1i)]" id="contact_birthdate_1i" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <br />
   <div class="form-group">
     <%= form.label :chat %>
@@ -104,3 +128,4 @@
 
 </div>
 <% end %>
+</div>
