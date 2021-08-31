@@ -1,5 +1,8 @@
 # Address Book v0.0.1
 
+### [Live demo](https://addressbookdemo.herokuapp.com) 
+
+
 ##### Get
 ```sh 
 $ git clone git@github.com:mtunjic/addressbook.git
@@ -29,8 +32,9 @@ pass: demo123
 ```sh 
 $ heroku login
 $ heroku create
-$ git push heroku master
-$ heroku run rake db:setup
+$ git push heroku main
+$ heroku run rake db:schema:load
+$ heroku run rake db:seed
 $ heroku open
 ```
 
