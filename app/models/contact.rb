@@ -43,8 +43,4 @@ class Contact < ApplicationRecord
 
   end
 
-  after_initialize do
-    addresses.build
-    phones.build
-  end
 end
