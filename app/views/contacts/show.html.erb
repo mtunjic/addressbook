@@ -1,64 +1,61 @@
+<% title(@contact.last_name) %>
 <div class="card">
   <div class="card-body">
-<h3><i class="fas fa-user"></i>&nbsp;<%= @contact.full_name %></h3>
-<p>
-  <strong>Email:</strong>
-  <%= mail_to @contact.email %>
-</p>
-<p>
-  <%= image_tag(@contact.avatar_image) if @contact.avatar_image.present? %>
-</p>
-<p>
-  <strong>Phone Numbers:</strong><br/>
- <% @contact.phones.each do |p| %>
-    <%= phone_to p.formatted_phone %> <br />
-  <% end %>
-</p>
-<hr>
-  <strong>Company:</strong>
-  <%= @contact.company %>
-</p>
-<p>
-  <strong>Job title:</strong>
-  <%= @contact.job_title %>
-</p>
-<p>
-  <strong>Birthdate:</strong>
-  <%= @contact.birthdate %>
-</p>
-<p>
-  <strong>Chat:</strong>
-  <%= @contact.chat %>
-</p>
-<p>
-  <strong>Website:</strong>
-  <%= @contact.website %>
-</p>
-<hr>
-
-<p>
-  <strong>Address:</strong>
-  <br/>
-  <% @contact.addresses.each do |address| %>
-    <p><%= address.zip_code %>, <%= address.street %>, <%= address.city %>, <%= address.state %> </p>
-  <% end %>
-</p>
-<p>
-  <%= @contact.notes %>
-</p>
+    <h3><i class="fas fa-user"></i>&nbsp;<%= @contact.full_name %></h3>
+    <p>
+      <strong>Email:</strong>
+      <%= mail_to @contact.email %>
+    </p>
+    <p>
+      <%= image_tag(@contact.avatar_image) if @contact.avatar_image.present? %>
+    </p>
+    <p>
+      <strong>Phone Numbers:</strong><br/>
+      <% @contact.phones.each do |p| %>
+        <%= phone_to p.formatted_phone %> <br />
+      <% end %>
+    </p>
+    <hr>
+    <strong>Company:</strong>
+    <%= @contact.company %>
+  </p>
+  <p>
+    <strong>Job title:</strong>
+    <%= @contact.job_title %>
+  </p>
+  <p>
+    <strong>Birthdate:</strong>
+    <%= birth_date_format(@contact.birthdate) %>
+  </p>
+  <p>
+    <strong>Chat:</strong>
+    <%= @contact.chat %>
+  </p>
+  <p>
+    <strong>Website:</strong>
+    <%= @contact.website %>
+  </p>
+  <hr>
+  <p>
+    <strong>Address:</strong>
+    <br/>
+    <% @contact.addresses.each do |address| %>
+      <p><%= address.zip_code %>, <%= address.street %>, <%= address.city %>, <%= address.state %> </p>
+    <% end %>
+  </p>
+  <p>
+    <%= @contact.notes %>
+  </p>
 </div>
 </div>
-
-
 <br/>
-  <div class="btn-group">
+<div class="btn-group">
   <%= link_to 'Edit', edit_contact_path(@contact), class: "btn  btn-primary" %> &nbsp;
   <%= button_to 'Delete', @contact, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  %>&nbsp;
   <%= link_to 'Cancel', contacts_path, class: "btn  btn-secondary" %></p>
 </div>
-
 <% content_for :actions do %>
-    <div class="action-header">
-      <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %> 
-    </div>
-  <% end %>
+  <div class="action-header">
+    <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %>
+  </div>
+<% end %>

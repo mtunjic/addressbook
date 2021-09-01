@@ -46,6 +46,7 @@ class ContactsController < ApplicationController
 
 
   def update
+    byebug
     if @contact.update(contact_params)
       flash[:notice] = "Contact was successfully updated."
       redirect_to @contact
