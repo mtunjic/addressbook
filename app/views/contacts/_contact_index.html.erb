@@ -1,0 +1,10 @@
+<h5><i class="fa fa-user" aria-hidden="true"></i> Contacts (<%= @contacts_count %>)</h5>
+<%= render "search_form" %>
+<% @contacts_index.each do |i, contacts| %>
+    <h5><div class="letter-index"><%= i %></div></h5>
+      <% contacts.each do |contact| %>
+            <%= link_to contact.full_name, contact_path(contact), 
+                class: "list-group-item list-group-item-action"  %>
+    <% end %>
+    <br />
+<% end %>

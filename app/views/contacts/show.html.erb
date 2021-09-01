@@ -56,3 +56,9 @@
   <%= button_to 'Delete', @contact, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  %>&nbsp;
   <%= link_to 'Cancel', contacts_path, class: "btn  btn-secondary" %></p>
 </div>
+
+<% content_for :actions do %>
+    <div class="action-header">
+      <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %> 
+    </div>
+  <% end %>

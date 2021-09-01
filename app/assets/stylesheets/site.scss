@@ -118,6 +118,11 @@ a:active {
     text-decoration: none;
 }
 
+.contact-card {
+    width: 16rem; 
+    margin: 3pt;
+}
+
 .contact-card a:link {
     color: #36373d;
 }
@@ -251,4 +256,14 @@ ul.actions {
 
 .form-group label  {
     padding-top: 10px;
+}
+
+
+.left-menu {
+   margin-right: 2px;
+}
+
+.letter-index {
+    padding: 2px 1px 3px 8px;
+    background-color: #e5e5e5;
 }

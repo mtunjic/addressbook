@@ -1,14 +1,11 @@
-<% contacts_count = current_user.contacts.count %>
-<h3>&nbsp;</h3>
-<h3><i class="fa fa-user" aria-hidden="true"></i> Contacts (<%= contacts_count %>)</h3>
 <h5 class="center">
 
-<% if contacts_count > 0 %>
+<% if @contacts_count > 0 %>
   <div class="btn-group">
     <% ('A'..'Z').each do |letter| %>
-      <%= link_to_unless_current letter, contacts_path(letter: letter), class: 'btn' %>
+      <%= link_to_unless_current letter, contacts_path(letter: letter), class: 'btn btn-sm' %>
     <% end %>
-    <%= link_to 'All', contacts_path, class: 'btn' %>
+    <%= link_to 'All', contacts_path, class: 'btn btn-sm' %>
   </div></h5>
   <hr/>
 
@@ -23,8 +20,6 @@
     <div class="action-header">
       <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %> 
     </div>
-     <hr />   
-    <%= render 'search_form' %> 
   <% end %>
   <% else %>
     <%= render "layouts/blank_slate" %>

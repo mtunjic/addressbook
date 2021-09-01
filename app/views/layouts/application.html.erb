@@ -16,11 +16,18 @@
     <%= render 'layouts/header' %>
     
     <div class="container">
-      <!-- left menu side -->
       <div class="row">
+
+        <!-- left menu side -->
+        <div class="col-2">
+          <div class="left-menu">
+            <%= yield :left_menu %>
+            <%= render "contact_index",  cached: true %>
+          </div>
+        </div>
       
         <!-- main content -->
-        <div class="col-10">
+        <div class="col-8">
            <main role="main" class="pb-3">
 
             <% if notice.present? %>
@@ -38,7 +45,7 @@
         </div>
 
         <!-- right actions side -->
-        <div class="col-2">
+        <div class="col">
            <div class="sidebar">
             <%= yield :sidebar %>
             <div class="actions">

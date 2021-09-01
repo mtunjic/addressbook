@@ -29,6 +29,11 @@ class Contact < ApplicationRecord
     where("last_name LIKE ?", "#{letter}%").order(:last_name)
   end
 
+  def self.alphabetical    
+    select(:id, :first_name, :last_name)
+      .group_by { |c| c.last_name[0,1].upcase }.sort
+  end 
+
   def self.import_csv(file)
 
     contacts = []

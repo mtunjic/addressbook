@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: %i[ show edit update destroy ]
+  before_action :set_contact_index
 
 
   def index
@@ -77,6 +78,10 @@ class ContactsController < ApplicationController
       redirect_to contacts_path
     end
 
+    def set_contact_index
+      @contacts_index ||= current_user.contacts.alphabetical
+      @contacts_count ||= current_user.contacts.count
+    end
  
     def contact_params
       params.require(:contact).permit(:first_name, :last_name, :email, :company,

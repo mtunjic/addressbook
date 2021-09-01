@@ -61,10 +61,10 @@ $ open erd.pdf
 - [x] Upload user picture
 - [x] Format the phone number for display
 - [x] Import/Export CSV 
-- [ ] Add index navigation pane 
+- [x] Add index navigation pane 
 - [x] Contact search
 - [x] Pagination
 - [ ] More input validations and better error messages 
 - [ ] Improve security, auth per actions
-- [ ] Clean and refactor html
+- [x] Clean and refactor html
 - [x] Deploy scripts & docker
