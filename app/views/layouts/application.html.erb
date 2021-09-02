@@ -28,7 +28,9 @@
         <div class="col-2">
           <div class="left-menu">
             <%= yield :left_menu %>
-            <%= render "contact_index",  cached: true %>
+            <% auth_only do %>
+              <%= render "shared/contact_index",  cached: true %>
+            <% end %>
           </div>
         </div>
       

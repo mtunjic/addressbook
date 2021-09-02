@@ -1,0 +1,8 @@
+<div class="input-group mb-3 flex-nowrap" >
+  <%= form_tag csv_import_index_url, multipart: true do %>
+    <%= file_field_tag :file, class: "form-control form-control-sm" %>
+    <br />
+    <%= submit_tag "Import", class: "btn btn-outline-secondary btn-sm btn-primary" %>
+     <%= link_to 'Cancel', contacts_path, class: "btn  btn-secondary btn-sm" %>
+  <% end %>
+</div>
