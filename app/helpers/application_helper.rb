@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def author_only(&block)
+  def auth_only(&block)
     block.call if current_user
   end
 

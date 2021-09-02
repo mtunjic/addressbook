@@ -1,5 +1,5 @@
 <h5><i class="fa fa-user" aria-hidden="true"></i> Contacts (<%= @contacts_count %>)</h5>
-<%= render "search_form" %>
+<%= render "shared/search_form" %>
 <% @contacts_index.each do |i, contacts| %>
     <h5><div class="letter-index"><%= i %></div></h5>
       <% contacts.each do |contact| %>

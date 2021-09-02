@@ -15,7 +15,7 @@
  
   <%= paginate @contacts %>
   <hr />
-  <%= render 'import_form' %>
+  <%= link_to "Import contacts", import_index_path %>
   <% content_for :actions do %>
     <div class="action-header">
       <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %> 

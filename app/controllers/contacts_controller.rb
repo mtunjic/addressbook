@@ -1,8 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: %i[ show edit update destroy ]
-  before_action :set_contact_index
-
-
+  
   def index
     #TODO: 
     # 1 authorize @contact, :index?
@@ -46,7 +44,6 @@ class ContactsController < ApplicationController
 
 
   def update
-    byebug
     if @contact.update(contact_params)
       flash[:notice] = "Contact was successfully updated."
       redirect_to @contact
@@ -63,13 +60,6 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
-  def import
-    Contact.import_csv(params[:file])
-    redirect_to root_url, notice: "Contacts imported."
-  rescue
-    flash[:alert] = "Unable to import contacts."
-    redirect_to contacts_path
-  end
 
   private
     def set_contact
@@ -77,11 +67,6 @@ class ContactsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = "The contact you were looking for could not be found."
       redirect_to contacts_path
-    end
-
-    def set_contact_index
-      @contacts_index ||= current_user.contacts.alphabetical
-      @contacts_count ||= current_user.contacts.count
     end
  
     def contact_params
