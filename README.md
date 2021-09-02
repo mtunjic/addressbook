@@ -1,4 +1,4 @@
-# Address Book v0.2.1
+# Address Book v0.3.0
 
 ### [Live demo](https://addressbookdemo.herokuapp.com) 
 
