@@ -5,9 +5,6 @@ class ImportControllerTest < ActionDispatch::IntegrationTest
   setup do
     @file = fixture_file_upload('contact.csv')
     sign_in users(:one)
-    # @contact1 = contacts(:one)
-    # @contact2 = contacts(:two)
-    # @group = groups(:one)
   end
 
   test "should get index" do
