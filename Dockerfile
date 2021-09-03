@@ -6,6 +6,7 @@ ENV DEV_PACKAGES="build-base ruby-dev zlib-dev libxml2-dev npm libxslt-dev tzdat
 RUN apk --update --upgrade add $RAILS_PACKAGES $DEV_PACKAGES
 
 RUN npm install -g yarn
+RUN ./bin/rails webpacker:install
  
 RUN mkdir -p /app
 WORKDIR /app

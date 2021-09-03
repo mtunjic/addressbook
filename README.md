@@ -12,7 +12,7 @@ $ git clone git@github.com:mtunjic/addressbook.git
 ```sh 
 # install deps
 $ cd addressbook 
-$ yarn install
+$ ./bin/rails webpacker:install # yarn install
 $ bin/bundle install --without production
 
 # create db and populate with test data 
