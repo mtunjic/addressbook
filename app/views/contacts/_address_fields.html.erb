@@ -1,35 +1,41 @@
-<div class='nested-address'>
-    <%= form.hidden_field :_destroy %>
-    <div class="form-group">
+<div class="card">
+  <div class="card-header">
+    Address
+  </div>
+  <div class="card-body">
+    <div class='nested-address'>
+      <%= form.hidden_field :_destroy %>
+      <div class="form-group">
         <%= form.label :street %>
         <%= form.text_field :street, class: "form-control" %>
-    </div>
-
-    <div class="row">
-
+      </div>
+      <div class="row">
         <div class="col-md-6">
-            <div class="form-group">
-                <%= form.label :city %>
-                <%= form.text_field :city, class: "form-control" %>
-            </div>
+          <div class="form-group">
+            <%= form.label :city %>
+            <%= form.text_field :city, class: "form-control" %>
+          </div>
         </div>
-        
         <div class="col-md-2">
-            <div class="form-group">
-                <%= form.label :state %>
-                <%= form.text_field :state, class: "form-control" %>
-            </div>
+          <div class="form-group">
+            <%= form.label :state %>
+            <%= form.text_field :state, class: "form-control" %>
+          </div>
         </div>
-
         <div class="col-md-4">
-            <div class="form-group">
-                <%= form.label :zip_code %>
-                <%= form.text_field :zip_code, class: "form-control" %>
-            </div>
+          <div class="form-group">
+            <%= form.label :zip_code %>
+            <%= form.text_field :zip_code, class: "form-control" %>
+          </div>
         </div>
-    </div>
-    <small>
+      </div>
+      <br />
+      <small class="address-remove">
+        <i class="fa fa-trash" aria-hidden="true"></i>
         <%= link_to "Remove", "#", data: { action: "click->nested-form#remove_form" } %>
-    </small>
-    <hr />
+      </small>
+
+    </div>
+  </div>
 </div>
+<br/>
