@@ -1,13 +1,13 @@
 one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+  first_name: Bill
+  last_name: Gates
+  email: bill@microsoft.com
   user: one
-  company: MyString
-  job_title: MyString
-  birthdate: 2021-08-22
-  chat: MyString
-  website: MyString
+  company: Microsoft
+  job_title: CEO
+  birthdate: 1955-10-28
+  chat: bill
+  website: billg.com
   notes: MyText
   group: one
 
