@@ -1,9 +1,10 @@
-<div class="card">
-  <div class="card-header">
-    Address
-  </div>
-  <div class="card-body">
-    <div class='nested-address'>
+   
+<div class='nested-address'>
+  <div class="card">
+    <div class="card-header">
+      Address
+    </div>
+    <div class="card-body">
       <%= form.hidden_field :_destroy %>
       <div class="form-group">
         <%= form.label :street %>
@@ -30,11 +31,12 @@
         </div>
       </div>
       <br />
-      <small class="address-remove">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-        <%= link_to "Remove", "#", data: { action: "click->nested-form#remove_form" } %>
-      </small>
-
+      <div class="address-remove">
+        <small >
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          <%= link_to "Remove", "#", data: { action: "click->nested-form#remove_form" } %>
+        </small>
+      </div>
     </div>
   </div>
 </div>
