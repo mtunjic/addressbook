@@ -38,9 +38,15 @@
   <hr>
   <p>
     <strong>Address:</strong>
-    <br/>
+    <br/>    
     <% @contact.addresses.each do |address| %>
-      <p><%= address.zip_code %>, <%= address.street %>, <%= address.city %>, <%= address.state %> </p>
+      <p><%= address %> </p>
+      <p>
+        <div id="map" data-controller="map" class="map"  
+                  data-map-lng-value="<%= address.geolocation.longitude %>" 
+                  data-map-lat-value="<%= address.geolocation.latitude %>">
+        </div>
+      </p>
     <% end %>
   </p>
   <p>

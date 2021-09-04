@@ -1,6 +1,6 @@
 <div class="search input-group mb-3">
   <%= form_tag({}, {:method => :get}) do %>
-    <%= text_field_tag :letter, params[:letter] ,
+    <%= search_field_tag :letter, params[:letter] ,
                           placeholder: "Search Contact...", 
                           size: 24,
                           class: "form-control form-control-sm" %>

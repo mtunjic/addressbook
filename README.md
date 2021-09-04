@@ -38,7 +38,7 @@ $ heroku run rake db:seed
 $ heroku open
 ```
 
-#### Docker (Optional)
+#### Docker for local tests (Optional)
 ```sh 
 $ docker build .
 $ docker tag [IMAGE_ID] addressbook
@@ -64,6 +64,7 @@ $ open erd.pdf
 - [x] Add index navigation pane 
 - [x] Contact search
 - [x] Pagination
+- [ ] Geolocation
 - [ ] More input validations and better error messages 
 - [ ] Improve security, auth per actions
 - [x] Clean and refactor html
