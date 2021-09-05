@@ -4,16 +4,9 @@ class ContactsController < ApplicationController
   def index
     #TODO: 
     # 1 authorize @contact, :index?
-    # 2 move to single rest action and serach 
-    if params[:letter]
-      @contacts = current_user
-        .contacts.includes(:phones)
-        .by_letter(params[:letter])
-        .page(params[:page]).per(9)
-    else
-      @contacts = current_user.contacts.includes(:phones)
-                              .page(params[:page]).per(9)
-    end
+    @contacts = current_user.contacts.includes(:phones)
+                            .page(params[:page]).per(9)
+ 
   end
 
 
@@ -59,6 +52,23 @@ class ContactsController < ApplicationController
     flash[:notice] = "Contact has been deleted."
     redirect_to contacts_path
   end
+
+  def search
+    @contacts = current_user.contacts.includes(:phones)
+      .search(params[:query])
+      .page(params[:page]).per(9)
+
+
+      render turbo_stream: turbo_stream.replace(
+        'contacts',
+        partial: ' contacts ',
+        locals: {
+          contacts:  @contacts 
+        }
+      )  
+    #render "index"
+  end
+  
 
 
   private

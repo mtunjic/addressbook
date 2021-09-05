@@ -66,6 +66,7 @@ $ open erd.pdf
 - [x] Pagination
 - [ ] Geolocation
 - [ ] More input validations and better error messages 
-- [ ] Improve security, auth per actions
 - [x] Clean and refactor html
 - [x] Deploy scripts & docker
+- [ ] PostGIS for production environment
+- [ ] Improve security, caching and performance

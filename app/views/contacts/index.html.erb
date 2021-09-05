@@ -1,29 +1,32 @@
 <h5 class="center">
-
-<% if @contacts_count > 0 %>
-  <div class="btn-group">
-    <% ('A'..'Z').each do |letter| %>
-      <%= link_to_unless_current letter, contacts_path(letter: letter), class: 'btn btn-sm' %>
-    <% end %>
-    <%= link_to 'All', contacts_path, class: 'btn btn-sm' %>
-  </div></h5>
+  <% if @contacts_count > 0 %>
+    <div class="btn-group">
+      <% ('A'..'Z').each do |letter| %>
+        <%= link_to_unless_current letter, search_path(query: letter), class: 'btn btn-sm' %>
+      <% end %>
+      <%= link_to 'All', contacts_path, class: 'btn btn-sm' %>
+    </div>
+  </h5>
   <hr/>
-
-  <div class="d-flex align-content-start flex-wrap">  
+  
+  <div class="d-flex align-content-start flex-wrap">
+    <turbo-stream action="replace" target="players">
+      <template>
+        <%= render @contacts %>
+      </template>
+    </turbo-stream>
     <%= render @contacts %>
   </div>
- 
+
   <%= paginate @contacts %>
   <hr />
   <%= link_to "Import contacts", import_index_path %>
   <% content_for :actions do %>
     <div class="action-header">
-      <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %> 
+      <%= link_to  "+ New Contact", new_contact_path, class: "btn btn-success btn-sm" %>
     </div>
   <% end %>
-  <% else %>
-    <%= render "layouts/blank_slate" %>
-  <% end %>
+<% else %>
+  <%= render "layouts/blank_slate" %>
+<% end %>
 <br>
-
-

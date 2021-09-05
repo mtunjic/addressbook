@@ -1,12 +1,19 @@
 <div class="search input-group mb-3">
-  <%= form_tag({}, {:method => :get}) do %>
-    <%= search_field_tag :letter, params[:letter] ,
-                          placeholder: "Search Contact...", 
-                          size: 24,
-                          class: "form-control form-control-sm" %>
-    <%# <button type="submit" class="btn btn-outline-secondary btn-sm searchButton">
-      <i class="fas fa-search"></i>
-    </button> %>
+  <%= form_with url: "/contacts/search/", 
+  data: { controller: 'search', search_target: "form" },
+  method: :get do |form| %>
+  <div class="form-group">
+    <div class=" input-group">
+      <%= search_field_tag :query, params[:query] ,
+                          placeholder: "Search Contact...",
+                          class: "form-control form-control-sm search-input",
+                          data: { action: "input->form-submission#search" }  %>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-outline-secondary btn-sm searchButton" data-remote="true">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
-
